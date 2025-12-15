@@ -1,0 +1,121 @@
+/* базові */
+body{
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 300ms, color 300ms;
+}
+
+.top{
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.wrap{
+  padding: 18px 20px;
+  max-width: 900px;
+}
+
+.card{
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 14px;
+  margin: 0 0 18px 0;
+}
+
+.sub{ margin: 6px 0 0; opacity: 0.85; }
+
+.row{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+button{
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+input[type="number"]{
+  width: 110px;
+  padding: 4px 6px;
+  margin-left: 6px;
+}
+
+.info{ opacity: 0.9; }
+.hint{ opacity: 0.85; margin-top: 10px; }
+
+.slider{
+  margin-top: 10px;
+  border: 1px solid rgba(0,0,0,0.35);
+  display: inline-block;
+  padding: 6px;
+  background: rgba(255,255,255,0.7);
+}
+
+.slider img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* таблиця */
+.tablePlace{
+  margin-top: 12px;
+  overflow-x: auto;
+}
+
+table.rand{
+  border-collapse: collapse;
+  border: 1px solid rgba(0,0,0,0.45);
+}
+
+table.rand td{
+  border: 1px solid rgba(0,0,0,0.35);
+  width: 38px;
+  height: 30px;
+  text-align: center;
+}
+
+/* "шахова дошка" */
+td.light{ background: rgba(255,255,255,0.9); }
+td.dark { background: rgba(0,0,0,0.10); }
+
+/* оформлення по часу доби */
+body.morning{
+  background-color: #e3f2fd; /* світло-блакитний */
+  color: #0b2239;
+}
+
+body.day{
+  background-color: #e8f5e9; /* світло-зелений */
+  color: #102a14;
+}
+
+body.evening{
+  background-color: #fff3e0; /* теплий */
+  color: #3a250f;
+}
+
+body.night{
+  background-color: #0d1b2a; /* темна ніч */
+  color: #e6edf7;
+}
+
+body.night .card{
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.22);
+}
+body.night .slider{
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.25);
+}
+body.night table.rand{
+  border-color: rgba(255,255,255,0.35);
+}
+body.night table.rand td{
+  border-color: rgba(255,255,255,0.25);
+}
+body.night td.light{ background: rgba(255,255,255,0.10); }
+body.night td.dark { background: rgba(255,255,255,0.04); }
