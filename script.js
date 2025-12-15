@@ -1,4 +1,4 @@
-// --- Оформлення сторінки по часу доби ---
+// по часу доби
 function getThemeByHour(h) {
   if (h >= 6 && h < 12) return "morning";
   if (h >= 12 && h < 18) return "day";
@@ -14,7 +14,7 @@ function applyTimeTheme() {
   document.body.classList.remove("morning", "day", "evening", "night");
   document.body.classList.add(cls);
 
-  // (необов'язково) якщо є елемент для відладки — показуємо час і тему
+  // час і тему
   var dbg = document.getElementById("themeDebug");
   if (dbg) {
     var hh = String(now.getHours()).padStart(2, "0");
@@ -24,12 +24,11 @@ function applyTimeTheme() {
   }
 }
 
-// щоб точно спрацювало при будь-якому сценарії
 document.addEventListener("DOMContentLoaded", applyTimeTheme);
 window.addEventListener("load", applyTimeTheme);
 window.addEventListener("pageshow", applyTimeTheme);
 
-// --- Слайдшоу ---
+// Слайдшоу 
 var images = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg"];
 var idx = 0;
 var timerId = null;
@@ -65,7 +64,7 @@ function askInterval() {
   setSlideInterval(val);
 }
 
-// --- Таблиця 10x10 ---
+// Таблиця
 function randInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -107,17 +106,14 @@ function generate() {
   msg.textContent = "Згенеровано для діапазону [" + min + "; " + max + "].";
 }
 
-// --- ініціалізація ---
 window.onload = function () {
-  // 1) тема — перевіряємо щосекунди (щоб було "одразу")
+  // тема 
   applyTimeTheme();
   setInterval(applyTimeTheme, 1000);
 
-  // 2) перше зображення без кешу
   var img = document.getElementById("slideImg");
   if (img) img.src = noCache(images[idx]);
 
-  // 3) інтервал питаємо одразу
   askInterval();
 
   document.getElementById("btnAskInterval").onclick = askInterval;
